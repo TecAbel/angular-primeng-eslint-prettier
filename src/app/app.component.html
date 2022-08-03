@@ -1,5 +1,20 @@
-<div ngClass="min-h-screen grid place-content-center bg-slate-900">
+<div ngClass="min-h-screen p-4 bg-slate-900">
   <div ngClass="container mx-auto">
-    <h1 ngClass="text-3xl text-blue-400">Hola acá</h1>
+    <h1 ngClass="text-3xl text-blue-400">Esto es una prueba para Prime ng</h1>
+    <div ngClass="grid mt-10 grid-cols-1 gap-6 md:grid-cols-2">
+      <app-component-container>
+        <div ngClass="flex gap-3">
+          <p-button label="BTN"></p-button>
+          <p-button label="Disabled" [disabled]="true"></p-button>
+        </div>
+      </app-component-container>
+      <app-component-container>
+        <span ngClass="text-white">hola</span>
+      </app-component-container>
+      <app-component-container>
+        <p-button type="button" (onClick)="showMsg()">Hola</p-button>
+        <p-toast></p-toast>
+      </app-component-container>
+    </div>
   </div>
 </div>
