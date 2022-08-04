@@ -1,0 +1,9 @@
+<div ngClass="p-inputgroup">
+  <span ngClass="p-inputgroup-addon">
+    <app-google-icon [icon]="icon || 'person'"></app-google-icon>
+  </span>
+  <span ngClass="p-float-label">
+    <ng-content></ng-content>
+    <label [for]="labelFor"> {{ labelName }} <span *ngIf="required" ngClass="p-error">*</span></label>
+  </span>
+</div>
