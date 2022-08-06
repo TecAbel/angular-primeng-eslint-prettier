@@ -8,14 +8,19 @@
     xl:grid-cols-4 "
   >
     <div ngClass="field">
-      <app-input-group icon="person" labelFor="user" labelName="Username" [required]="true">
-          <input
-            type="text"
-            id="user"
-            aria-describedby="username-help"
-            formControlName="username"
-            pInputText
-          />
+      <app-input-group
+        icon="person"
+        labelFor="user"
+        labelName="Username"
+        [required]="true"
+      >
+        <input
+          type="text"
+          id="user"
+          aria-describedby="username-help"
+          formControlName="username"
+          pInputText
+        />
       </app-input-group>
       <small
         ngClass="p-error"
@@ -24,7 +29,12 @@
       >
     </div>
     <div ngClass="field">
-      <app-input-group labelName="Email" labelFor="email" icon="email" [required]="true">
+      <app-input-group
+        labelName="Email"
+        labelFor="email"
+        icon="email"
+        [required]="true"
+      >
         <input type="text" formControlName="email" pInputText />
       </app-input-group>
 
@@ -39,12 +49,37 @@
         >{{ fieldControl('email').value }} is not a valid email</small
       >
     </div>
+
+    <div ngClass="field">
+      <label>Favorite Rick and Morty's character</label>
+      <p-autoComplete
+        [suggestions]="charFiltered"
+        formControlName="character"
+        field="name"
+        (completeMethod)="complete($event.query)"
+        [dropdown]="true"
+      >
+        <ng-template let-character pTemplate="name">
+          <div ngClass="flex flex-row gap-2 items-center">
+            <img
+              ngClass="h-10 w-10"
+              [src]="character.image"
+              [alt]="character.name"
+            />
+            <span ngClass="text-xl">{{ character.name }}</span>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
   </div>
 
   <p-button ngClass="mt-3" type="submit" [disabled]="registerUserFm.invalid"
     >Submit form</p-button
   >
-  <div *ngIf="submitted" ngClass="bg-gray-500 text-white p-2 mt-5 rounded-lg" >
+  <div
+    *ngIf="submitted"
+    ngClass="bg-gray-500 max-w-full max-h-[10rem] text-white p-2 mt-5 rounded-lg overflow-auto"
+  >
     <pre>{{ registerUserFm.value | json }}</pre>
   </div>
 </form>
