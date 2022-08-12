@@ -17,7 +17,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete'
 import { ComponentContainerComponent } from './components/component-container/component-container.component'
 import { FormComponent } from './components/form/form.component'
 import { GoogleIconComponent } from './components/google-icon/google-icon.component'
-import { InputGroupComponent } from './components/input-group/input-group.component'
+import { InputGroupComponent } from './components/input-group/input-group.component';
+import { InputErrorComponent } from './components/input-error/input-error.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InputGroupComponent } from './components/input-group/input-group.compon
     FormComponent,
     ComponentContainerComponent,
     GoogleIconComponent,
-    InputGroupComponent
+    InputGroupComponent,
+    InputErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -17,16 +17,18 @@
         <input
           type="text"
           id="user"
+          name="user"
           aria-describedby="username-help"
           formControlName="username"
           pInputText
         />
       </app-input-group>
-      <small
-        ngClass="p-error"
-        *ngIf="fieldControl('username').hasError('required') && fieldControl('username').touched"
-        >Username is required</small
-      >
+      <app-input-error
+        errorMessage="Username is required"
+        error="required"
+        ngDefaultControl
+        [formControl]="fieldControl('username')"
+      ></app-input-error>
     </div>
     <div ngClass="field">
       <app-input-group
@@ -35,19 +37,21 @@
         icon="email"
         [required]="true"
       >
-        <input type="text" formControlName="email" pInputText />
+        <input type="text" [id]="'email'" formControlName="email" pInputText />
       </app-input-group>
 
-      <small
-        ngClass="p-error"
-        *ngIf="fieldControl('email').hasError('required') && fieldControl('email').touched"
-        >Email is required</small
-      >
-      <small
-        ngClass="p-error"
-        *ngIf="fieldControl('email').hasError('email') && fieldControl('email').touched"
-        >{{ fieldControl('email').value }} is not a valid email</small
-      >
+      <app-input-error
+        ngDefaultControl
+        error="required"
+        errorMessage="Email is required"
+        [formControl]="fieldControl('email')"
+      ></app-input-error>
+      <app-input-error
+        ngDefaultControl
+        error="email"
+        errorMessage="Email is not valid"
+        [formControl]="fieldControl('email')"
+      ></app-input-error>
     </div>
 
     <div ngClass="field">
