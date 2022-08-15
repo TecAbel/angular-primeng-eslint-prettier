@@ -3,8 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 ## Justification
+
 This project was created to test and ilustrate how to use PrimeNg, and some other things to make it more usable
 
+## Node Version
+
+Use min 16.15.1
 
 ## Development server
 
