@@ -21,6 +21,16 @@
           <app-form></app-form>
         </div>
       </app-component-container>
+      <div>
+        <h3>Login / Logout</h3>
+        <div ngClass="w-full flex gap-10">
+          <p-button (onClick)="singIn()">LogIn</p-button>
+          <p-button>LogOut</p-button>
+        </div>
+      </div>
+      <div ngClass="mt-44">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

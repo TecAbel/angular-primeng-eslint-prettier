@@ -1,0 +1,13 @@
+<p *ngIf="!full">No está loggeado</p>
+<div *ngIf="full" class="text-white">
+  <p>Perfil!</p>
+  <br />
+  <p *ngIf="full.idToken?.claims">
+    Bienvenido {{ full.idToken?.claims?.name }}
+  </p>
+  <br />
+  <div>
+    <pre ngClass="text-white">{{ full | json }}</pre>
+    <p-button (onClick)="call()">Llamar</p-button>
+  </div>
+</div>
